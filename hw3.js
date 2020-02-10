@@ -13,6 +13,8 @@ function addItems(parent, n){
 	
 		div.innerText = i + " =Buzz" + " Fizz";//TODO 
 		div.className = getClassName(i);
+		// getElementById = "divides3", "divides5";
+		
 		// TODO add id to div
 		// var c = document.getElementById("div").getElementsByClassName;
 		// document.getElementById("demo").innerHTML = c;
@@ -24,15 +26,24 @@ function addItems(parent, n){
 }  
 
 function getClassName(number){
-	var className = ""
-	if (number % 3 === 0) {
-		className = className + "divides3"
-	} else if (number % 5 === 0) {
-		className = className + "divides5"}
-		else if (number % 3 , 5 === -1) {
-			className = className + "dont divides"
+	var className = " "
+	// if (number % 3 === 0) {className = className + "D3"} 
+	// if (number % 5 === 0) {className = className + "D5"}
+	// if (number % 3 >= 1 ) { className = className + "nD3" }
+	// if (number % 5 >= 1 ) { className = className + "nD5" }
+	// if (number % 3 === 0 && number % 5 === 0) {className = className + "D3D5"} 
 
-		}
+		
+if (number % 3 === 0 && number % 5 === 0) { className += "FizzBuzz"};// divides with 5 and 3 evenly
+if (number % 3 === 0 && number % 5 !== 0) { className += "Fizz"};// divides with 3 ONLY
+if (number % 3 !== 0 && number % 5 === 0) { className += "Buzz"};// divides with 5 ONLY
+if (number % 3 !== 0 && number % 5 !== 0) { className += "Emty"};// does not divides with 5 and 3
+
+
+		// else if (number % 3 , 5 === -1) {
+		// 	className = className + "dont divides"
+
+		// }
 
 	//ADD ATHER IF statmant	
 
