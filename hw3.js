@@ -1,6 +1,6 @@
 console.log("started HW");
 
-function run(){
+function run() {
 	parent = document.getElementById('main');
 	addItems(parent,100);
 }
@@ -10,15 +10,17 @@ function addItems(parent, n){
 
 		// console.log(i + " / " + n);
 		var div =document.createElement("div");
+		// var id = document.createElement("id")
+		
 	
-		div.innerText = i + " =Buzz" + " Fizz";//TODO 
+		div.innerText = i;//TODO 
 		div.className = getClassName(i);
 		// getElementById = "divides3", "divides5";
 		
 		// TODO add id to div
 		// var c = document.getElementById("div").getElementsByClassName;
 		// document.getElementById("demo").innerHTML = c;
-	
+		// div.appendChild(id);
 		parent.appendChild(div);			
 		console.log(div);
 
@@ -51,6 +53,8 @@ if (number % 3 !== 0 && number % 5 !== 0) { className += "Emty"};// does not div
 	
 
 }
+
+
 
 
 
