@@ -6,88 +6,92 @@ function run() {
 }
 
 function addItems(parent, n){
-    for (var i = 1; i <= n; i++) {
-
-		// console.log(i + " / " + n);
-		var div =document.createElement("div");
-		// var id = document.createElement("id")
-		
-	
-		div.innerText = i;//TODO 
-		div.className = getClassName(i);
-		// getElementById = "divides3", "divides5";
-		
-		// TODO add id to div
-		// var c = document.getElementById("div").getElementsByClassName;
-		// document.getElementById("demo").innerHTML = c;
-		// div.appendChild(id);
-		parent.appendChild(div);			
-		console.log(div);
+    for (let i = 1; i <= n; i++) {
+	let div =document.createElement("div");
+	div.innerText = i;
+	div.className = getClassName(i);
+	parent.appendChild(div);			
+	console.log(div);
 
 	}
 }  
 
 function getClassName(number){
-	var className = " "
-	// if (number % 3 === 0) {className = className + "D3"} 
-	// if (number % 5 === 0) {className = className + "D5"}
-	// if (number % 3 >= 1 ) { className = className + "nD3" }
-	// if (number % 5 >= 1 ) { className = className + "nD5" }
-	// if (number % 3 === 0 && number % 5 === 0) {className = className + "D3D5"} 
-
-		
+	var className = " "		
 if (number % 3 === 0 && number % 5 === 0) { className += "FizzBuzz"};// divides with 5 and 3 evenly
 if (number % 3 === 0 && number % 5 !== 0) { className += "Fizz"};// divides with 3 ONLY
 if (number % 3 !== 0 && number % 5 === 0) { className += "Buzz"};// divides with 5 ONLY
 if (number % 3 !== 0 && number % 5 !== 0) { className += "Emty"};// does not divides with 5 and 3
 
-
-		// else if (number % 3 , 5 === -1) {
-		// 	className = className + "dont divides"
-
-		// }
-
-	//ADD ATHER IF statmant	
-
 	return className;
+}
+const myInput = document.querySelector(".num-input");
+// const myBtnSM = document.querySelector("#submitBtn");
+const myBtnF = document.querySelector("#FizzBtn");
+const myBtnB = document.querySelector("#BuzzBtn");
+const myBtnFB = document.querySelector("#FizzBuzzBtn");
+const delButton = document.querySelector("#deleteBtn");
+
+console.log(`My value is ${myInput.value}`);
+// console.log (`Fizz btn was click ${myBtnF.value} `)
+
+
+
+// myBtnSM.style.backgroundColor = "pink";
+myInput.style.backgroundColor = "#fff9c7";
+myBtnF.style.backgroundColor = "grey";
+myBtnB.style.backgroundColor = "greenyellow";
+myBtnFB.style.backgroundColor = "cornflowerblue";
+delButton.style.backgroundColor = "yellow";
+
+
+
+
+// myBtnSM.addEventListener("click", onButtonClick);
+// function onButtonClick() {
+// 	console.log("Button was clicked!");
+// }
 	
 
+myBtnF.addEventListener("click", onButtonClick);
+function onButtonClick() {
+	console.log("Button was Fizz!");
+	
+}
+
+myBtnB.addEventListener("click", onButtonClick);
+function onButtonClick() {
+	console.log("Button was Buzz!");
+}
+
+myBtnFB.addEventListener("click", onButtonClick);
+function onButtonClick() {
+	console.log("Button was FizzBuzz!");
+}
+
+delButton.addEventListener("click", onButtonClick);
+function onDelete() {
+	console.log("Button was clicked, delete!");
+delButton.onclick = onDelete;
 }
 
 
+// let nThrows = myInput.value;
+    // let result = getAverage(nThrows);
+
+
+// myBtnSM.onclick = onButtonClick;
+// myBtnF.onclick = onButtonClick;
+// myBtnB.onclick = onButtonClick;
+// myBtnFB.onclick = onButtonClick;
+// delButton.onclick = onDelete;
 
 
 
 
-// var Fizz = "Fizz";
-// var Buzz = "Buzz";
 
-// function addItemsFB (addItems, Fizz, Buzz){
-//     for a = i/3;
-//         console.log(addItems, Fizz);
-// }  
-// // var myNumbers = {
-//     addItems, " =", "Fizz", "Buzz",
- 
-// };
+// function myFunction() {
+// 	document.getElementById("FizzBtn").innerHTML = className"Fizz";}
 
 
-// var element = document.createElement("tagName"[,i]);
-// console.log("tagName",i);
-
-
-/** 
- * 
- * TODO:
- * 	 + 1) Atradis elementu kam pievienot parejos
- * 	 + 2) Pievienot elementu div n
- *  3) Jasaprot kadiem kadiem elemtiem jabut
- * 		- jamak noradit specifiska klase (4 klases  divides3and5, divides3, divides5, notdivides3and5 )
- * 		- jamak teksts noradit
- * 		- jamak norradit unikals ID 1-100
- * 
- * 		
- * 
- * 
- */
 

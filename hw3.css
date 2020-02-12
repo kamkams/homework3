@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+     flex-wrap: wrap;
+     background-color:#fff9c7;
+    flex-direction: row;
+    align-content: space-around;
+
+
+}
+
+div {
+display: flex;
+flex-wrap: wrap;
+width : 100px;
+height: 100px;
+border-color: black;
+border-style: solid;
+font-size: 50px;
+justify-content: center;
+}
+
+.FizzBuzz {
+background-color: cornflowerblue;
+}
+
+.Fizz {
+background-color:gray;   
+}
+
+.Buzz{
+background-color: greenyellow;
+}
+
+.Emty {
+background-color: whitesmoke;    
+}
