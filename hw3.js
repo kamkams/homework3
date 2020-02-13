@@ -56,27 +56,32 @@ function onInput(event){
 	console.log("new value is",event.target.value);
 }	
 
-// funkciju var padot ka anonimu funkciju
 myBtnF.addEventListener("click", function onButtonClick() {
 	console.log("Button was Fizz!");
 });
-// funkciju var padot ka anonimu funkciju
+
 myBtnB.addEventListener("click", function onButtonClick() {
 	console.log("Button was Buzz!");
 });
 
-// funkciju var padot ka named funkciju
 myBtnFB.addEventListener("click", onFizzBuzzButtonClick);
 function onFizzBuzzButtonClick() {
 	console.log("Button was FizzBuzz!");
 }
-// funkciju var padot ka named funkciju
+
 delButton.addEventListener("click", onDeleteButtonClick);
 function onDeleteButtonClick() {
 	console.log("Button was clicked, delete!");
 }
 
-
+function showFizz(){
+	var elements = document.querySelectorAll("Fiz");
+	elements.forEach(function(el){
+	 if(false === el.classList.contains("Fizz")){
+	 	el.remove();
+	 }
+	});
+}
 
 // let nThrows = myInput.value;
     // let result = getAverage(nThrows);
