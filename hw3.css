@@ -34,3 +34,9 @@ background-color: greenyellow;
 .Emty {
 background-color: whitesmoke;    
 }
+
+button, input {
+    height: 50px;
+    width: 100px;
+    font-size: 20px;
+}

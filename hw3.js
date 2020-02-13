@@ -32,8 +32,8 @@ const myBtnB = document.querySelector("#BuzzBtn");
 const myBtnFB = document.querySelector("#FizzBuzzBtn");
 const delButton = document.querySelector("#deleteBtn");
 
-console.log(`My value is ${myInput.value}`);
-// console.log (`Fizz btn was click ${myBtnF.value} `)
+// console.log(`My value is ${myInput.value}`);
+
 
 
 
@@ -51,29 +51,31 @@ delButton.style.backgroundColor = "yellow";
 // function onButtonClick() {
 // 	console.log("Button was clicked!");
 // }
-	
+myInput.addEventListener("change",onInput);
+function onInput(event){
+	console.log("new value is",event.target.value);
+}	
 
-myBtnF.addEventListener("click", onButtonClick);
-function onButtonClick() {
+// funkciju var padot ka anonimu funkciju
+myBtnF.addEventListener("click", function onButtonClick() {
 	console.log("Button was Fizz!");
-	
-}
-
-myBtnB.addEventListener("click", onButtonClick);
-function onButtonClick() {
+});
+// funkciju var padot ka anonimu funkciju
+myBtnB.addEventListener("click", function onButtonClick() {
 	console.log("Button was Buzz!");
-}
+});
 
-myBtnFB.addEventListener("click", onButtonClick);
-function onButtonClick() {
+// funkciju var padot ka named funkciju
+myBtnFB.addEventListener("click", onFizzBuzzButtonClick);
+function onFizzBuzzButtonClick() {
 	console.log("Button was FizzBuzz!");
 }
-
-delButton.addEventListener("click", onButtonClick);
-function onDelete() {
+// funkciju var padot ka named funkciju
+delButton.addEventListener("click", onDeleteButtonClick);
+function onDeleteButtonClick() {
 	console.log("Button was clicked, delete!");
-delButton.onclick = onDelete;
 }
+
 
 
 // let nThrows = myInput.value;
