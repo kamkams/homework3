@@ -1,8 +1,8 @@
 console.log("started HW");
 
-function run() {
+function run(num) {
 	parent = document.getElementById('main');
-	addItems(parent,100);
+	addItems(parent,num);
 }
 
 function addItems(parent, n){
@@ -18,9 +18,9 @@ function addItems(parent, n){
 
 function getClassName(number){
 	var className = " "		
-if (number % 3 === 0 && number % 5 === 0) { className += "FizzBuzz"};// divides with 5 and 3 evenly
 if (number % 3 === 0 && number % 5 !== 0) { className += "Fizz"};// divides with 3 ONLY
 if (number % 3 !== 0 && number % 5 === 0) { className += "Buzz"};// divides with 5 ONLY
+if (number % 3 === 0 && number % 5 === 0) { className += "FizzBuzz"};// divides with 5 and 3 evenly
 if (number % 3 !== 0 && number % 5 !== 0) { className += "Emty"};// does not divides with 5 and 3
 
 	return className;
@@ -56,34 +56,57 @@ function onInput(event){
 	console.log("new value is",event.target.value);
 }	
 
-myBtnF.addEventListener("click", function onButtonClick() {
-	console.log("Button was Fizz!");
-});
-
-myBtnB.addEventListener("click", function onButtonClick() {
-	console.log("Button was Buzz!");
-});
-
-myBtnFB.addEventListener("click", onFizzBuzzButtonClick);
-function onFizzBuzzButtonClick() {
-	console.log("Button was FizzBuzz!");
-}
-
-delButton.addEventListener("click", onDeleteButtonClick);
-function onDeleteButtonClick() {
-	console.log("Button was clicked, delete!");
-}
-
-function showFizz(){
-	var elements = document.querySelectorAll("Fiz");
+myBtnF.addEventListener("click",function() {
+	var elements = document.querySelectorAll('.container > div');
 	elements.forEach(function(el){
-	 if(false === el.classList.contains("Fizz")){
-	 	el.remove();
+		 if(false === el.classList.contains("Fizz")){
+		 el.remove();
 	 }
 	});
-}
 
-// let nThrows = myInput.value;
+});
+
+myBtnB.addEventListener("click", function () {
+	var elements = document.querySelectorAll('.container > div');
+	elements.forEach(function(el){
+	 if(false === el.classList.contains("Buzz")){		 
+		 el.remove();
+	 }
+	});
+});
+
+myBtnFB.addEventListener("click", function () {
+	var elements = document.querySelectorAll('.container > div');
+	elements.forEach(function(el){
+	 if(false === el.classList.contains("FizzBuzz")){		 
+		 el.remove();
+	 }
+	});
+});
+delButton.addEventListener("click", function () {
+	var elements = document.querySelectorAll('.container > div');
+	elements.forEach(function(el){
+      el.remove();
+
+	});
+
+	run(100);// TODO
+
+});
+
+document.addEventListener('DOMContentLoaded', (event) => {
+	run(100)
+  })
+// function showFizz(){
+// 	var elements = document.querySelectorAll("Fiz");
+// 	elements.forEach(function(el){
+// 	 if(false === el.classList.contains("Fizz")){
+// 	 	el.remove();
+// 	 }
+// 	});
+// }
+
+// // let nThrows = myInput.value;
     // let result = getAverage(nThrows);
 
 
