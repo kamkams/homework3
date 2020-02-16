@@ -1,7 +1,6 @@
-console.log("started HW");
-
 function run(num) {
 	parent = document.getElementById('main');
+	parent.innerHTML = "";
 	addItems(parent,num);
 }
 
@@ -11,8 +10,6 @@ function addItems(parent, n){
 	div.innerText = i;
 	div.className = getClassName(i);
 	parent.appendChild(div);			
-	console.log(div);
-
 	}
 }  
 
@@ -25,19 +22,13 @@ if (number % 3 !== 0 && number % 5 !== 0) { className += "Emty"};// does not div
 
 	return className;
 }
+
 const myInput = document.querySelector(".num-input");
-// const myBtnSM = document.querySelector("#submitBtn");
 const myBtnF = document.querySelector("#FizzBtn");
 const myBtnB = document.querySelector("#BuzzBtn");
 const myBtnFB = document.querySelector("#FizzBuzzBtn");
 const delButton = document.querySelector("#deleteBtn");
 
-// console.log(`My value is ${myInput.value}`);
-
-
-
-
-// myBtnSM.style.backgroundColor = "pink";
 myInput.style.backgroundColor = "#fff9c7";
 myBtnF.style.backgroundColor = "grey";
 myBtnB.style.backgroundColor = "greenyellow";
@@ -45,15 +36,9 @@ myBtnFB.style.backgroundColor = "cornflowerblue";
 delButton.style.backgroundColor = "yellow";
 
 
-
-
-// myBtnSM.addEventListener("click", onButtonClick);
-// function onButtonClick() {
-// 	console.log("Button was clicked!");
-// }
 myInput.addEventListener("change",onInput);
 function onInput(event){
-	console.log("new value is",event.target.value);
+	 run(event.target.value);
 }	
 
 myBtnF.addEventListener("click",function() {
@@ -90,38 +75,9 @@ delButton.addEventListener("click", function () {
 
 	});
 
-	run(100);// TODO
-
+	run(myInput.value);
 });
 
 document.addEventListener('DOMContentLoaded', (event) => {
-	run(100)
-  })
-// function showFizz(){
-// 	var elements = document.querySelectorAll("Fiz");
-// 	elements.forEach(function(el){
-// 	 if(false === el.classList.contains("Fizz")){
-// 	 	el.remove();
-// 	 }
-// 	});
-// }
-
-// // let nThrows = myInput.value;
-    // let result = getAverage(nThrows);
-
-
-// myBtnSM.onclick = onButtonClick;
-// myBtnF.onclick = onButtonClick;
-// myBtnB.onclick = onButtonClick;
-// myBtnFB.onclick = onButtonClick;
-// delButton.onclick = onDelete;
-
-
-
-
-
-// function myFunction() {
-// 	document.getElementById("FizzBtn").innerHTML = className"Fizz";}
-
-
-
+	run(myInput.value)
+});
