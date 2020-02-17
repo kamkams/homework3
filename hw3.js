@@ -15,10 +15,10 @@ function addItems(parent, n){
 
 function getClassName(number){
 	var className = " "		
-if (number % 3 === 0 && number % 5 !== 0) { className += "Fizz"};// divides with 3 ONLY
-if (number % 3 !== 0 && number % 5 === 0) { className += "Buzz"};// divides with 5 ONLY
-if (number % 3 === 0 && number % 5 === 0) { className += "FizzBuzz"};// divides with 5 and 3 evenly
-if (number % 3 !== 0 && number % 5 !== 0) { className += "Emty"};// does not divides with 5 and 3
+if (number % 3 === 0 && number % 5 !== 0) { className += "Fizz"};
+if (number % 3 !== 0 && number % 5 === 0) { className += "Buzz"};
+if (number % 3 === 0 && number % 5 === 0) { className += "FizzBuzz"};
+if (number % 3 !== 0 && number % 5 !== 0) { className += "Emty"};
 
 	return className;
 }
